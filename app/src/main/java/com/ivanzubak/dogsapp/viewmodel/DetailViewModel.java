@@ -6,12 +6,9 @@ import android.os.AsyncTask;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.ViewModel;
 
 import com.ivanzubak.dogsapp.model.DogBreed;
 import com.ivanzubak.dogsapp.model.DogDatabase;
-
-import io.reactivex.android.schedulers.AndroidSchedulers;
 
 public class DetailViewModel extends AndroidViewModel {
     public MutableLiveData<DogBreed> dogLiveData = new MutableLiveData<DogBreed>();

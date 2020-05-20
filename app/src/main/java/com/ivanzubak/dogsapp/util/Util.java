@@ -36,4 +36,5 @@ public class Util {
     public static void loadImage(ImageView view, String url) {
         loadImage(view, url, getProgressDrawable(view.getContext()));
     }
+
 }

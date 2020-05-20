@@ -53,8 +53,8 @@ public class DogsListAdapter extends RecyclerView.Adapter<DogsListAdapter.DogVie
         int uuid = Integer.parseInt(uuidString);
 
         ListFragmentDirections.ActionDetail action = ListFragmentDirections.actionDetail();
-            action.setDogUuid(uuid);
-            Navigation.findNavController(v).navigate(action);
+        action.setDogUuid(uuid);
+        Navigation.findNavController(v).navigate(action);
     }
 
     @Override

@@ -5,11 +5,18 @@
         <variable
             name="dog"
             type="com.ivanzubak.dogsapp.model.DogBreed" />
+        <variable
+            name="pallete"
+            type="com.ivanzubak.dogsapp.model.DogPallete" />
+
     </data>
 
     <RelativeLayout xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:background="@{pallete.color}"
         tools:context=".view.ListFragment">
 
         <ImageView
