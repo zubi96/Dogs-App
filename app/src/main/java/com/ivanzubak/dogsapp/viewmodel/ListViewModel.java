@@ -2,6 +2,7 @@ package com.ivanzubak.dogsapp.viewmodel;
 
 import android.app.Application;
 import android.os.AsyncTask;
+import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -42,16 +43,18 @@ public class ListViewModel extends AndroidViewModel {
     }
 
     public void refresh() {
-        checkCacheDuration();
 
-        long updateTime = prefHelper.getUpdateTime();
-        long currentTime = System.nanoTime();
+            checkCacheDuration();
 
-        if(updateTime != 0 && currentTime - updateTime < refreshTime) {
-            fetchFromDatabase();
-        } else {
-            fetchFromRemote();
-        }
+            long updateTime = prefHelper.getUpdateTime();
+            long currentTime = System.nanoTime();
+
+            if(updateTime != 0 && currentTime - updateTime < refreshTime) {
+                fetchFromDatabase();
+            } else {
+                fetchFromRemote();
+            }
+
     }
 
     public void refreshBypassCache() {

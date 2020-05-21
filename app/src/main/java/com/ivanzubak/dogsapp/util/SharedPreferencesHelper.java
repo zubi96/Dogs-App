@@ -30,6 +30,6 @@ public class SharedPreferencesHelper {
     }
 
     public String getCacheDuration() {
-        return prefs.getString("pref_cache_duration", "");
+        return prefs.getString("pref_cache_duration", "10");
     }
 }
