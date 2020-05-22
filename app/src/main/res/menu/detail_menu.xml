@@ -5,6 +5,12 @@
     <item
         android:id="@+id/action_send_sms"
         android:title="Send SMS"
+        android:icon="@drawable/ic_sms"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_send_post"
+        android:title="Send POST request"
         android:icon="@drawable/ic_send"
         app:showAsAction="ifRoom" />
 

@@ -4,10 +4,10 @@
     <data>
         <variable
             name="dog"
-            type="com.ivanzubak.dogsapp.model.DogBreed" />
+            type="com.ivanzubak.dogsapp.data.DogBreed" />
         <variable
             name="listener"
-            type="com.ivanzubak.dogsapp.view.DogClickListener" />
+            type="com.ivanzubak.dogsapp.ui.list.DogClickListener" />
     </data>
 
     <LinearLayout

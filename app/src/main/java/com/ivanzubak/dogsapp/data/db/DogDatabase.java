@@ -1,10 +1,12 @@
-package com.ivanzubak.dogsapp.model;
+package com.ivanzubak.dogsapp.data.db;
 
 import android.content.Context;
 
 import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
+
+import com.ivanzubak.dogsapp.data.DogBreed;
 
 @Database(entities = {DogBreed.class}, version = 1)
 public abstract class DogDatabase extends RoomDatabase {

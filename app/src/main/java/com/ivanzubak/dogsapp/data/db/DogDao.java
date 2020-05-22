@@ -1,8 +1,10 @@
-package com.ivanzubak.dogsapp.model;
+package com.ivanzubak.dogsapp.data.db;
 
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
+
+import com.ivanzubak.dogsapp.data.DogBreed;
 
 import java.util.List;
 

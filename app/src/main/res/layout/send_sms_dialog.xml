@@ -3,7 +3,7 @@
     <data>
         <variable
             name="smsInfo"
-            type="com.ivanzubak.dogsapp.model.SmsInfo" />
+            type="com.ivanzubak.dogsapp.data.SmsInfo" />
     </data>
     
     <LinearLayout

@@ -1,4 +1,4 @@
-package com.ivanzubak.dogsapp.model;
+package com.ivanzubak.dogsapp.data;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;

@@ -1,4 +1,6 @@
-package com.ivanzubak.dogsapp.model;
+package com.ivanzubak.dogsapp.data.remote.dogs;
+
+import com.ivanzubak.dogsapp.data.DogBreed;
 
 import java.util.List;
 

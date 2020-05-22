@@ -1,10 +1,8 @@
-package com.ivanzubak.dogsapp.view;
+package com.ivanzubak.dogsapp.ui.list;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -14,8 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.ivanzubak.dogsapp.R;
 import com.ivanzubak.dogsapp.databinding.ItemDogBinding;
-import com.ivanzubak.dogsapp.model.DogBreed;
-import com.ivanzubak.dogsapp.util.Util;
+import com.ivanzubak.dogsapp.data.DogBreed;
 
 import java.util.ArrayList;
 import java.util.List;

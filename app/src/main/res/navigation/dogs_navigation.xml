@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/listFragment"
-        android:name="com.ivanzubak.dogsapp.view.ListFragment"
+        android:name="com.ivanzubak.dogsapp.ui.list.ListFragment"
         android:label="Dogs"
         tools:layout="@layout/fragment_list">
         <action
@@ -23,7 +23,7 @@
 
     <fragment
         android:id="@+id/detailFragment"
-        android:name="com.ivanzubak.dogsapp.view.DetailFragment"
+        android:name="com.ivanzubak.dogsapp.ui.detail.DetailFragment"
         android:label="Dog details"
         tools:layout="@layout/fragment_detail">
         <action
@@ -36,6 +36,6 @@
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="com.ivanzubak.dogsapp.view.SettingsFragment"
+        android:name="com.ivanzubak.dogsapp.ui.settings.SettingsFragment"
         android:label="SettingsFragment" />
 </navigation>

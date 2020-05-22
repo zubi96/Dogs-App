@@ -1,4 +1,4 @@
-package com.ivanzubak.dogsapp.view;
+package com.ivanzubak.dogsapp.ui.list;
 
 import android.os.Bundle;
 
@@ -21,7 +21,6 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.ivanzubak.dogsapp.R;
-import com.ivanzubak.dogsapp.viewmodel.ListViewModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -77,20 +76,20 @@ public class ListFragment extends Fragment {
     }
 
     private void observeViewModel() {
-        viewModel.dogs.observe(this, dogs -> {
+        viewModel.getDogs().observe(this, dogs -> {
             if(dogs != null && dogs instanceof List) {
                 dogsList.setVisibility(View.VISIBLE);
                 dogsListAdapter.updateDogsList(dogs);
             }
         });
 
-        viewModel.dogLoadError.observe(this, isError -> {
+        viewModel.getDogLoadError().observe(this, isError -> {
             if(isError != null && isError instanceof Boolean) {
                 listError.setVisibility(isError ? View.VISIBLE : View.GONE);
             }
         });
 
-        viewModel.loading.observe(this, isLoading -> {
+        viewModel.getLoading().observe(this, isLoading -> {
             if(isLoading != null && isLoading instanceof Boolean) {
                 loadingView.setVisibility(isLoading ? View.VISIBLE : View.GONE);
                 if(isLoading) {

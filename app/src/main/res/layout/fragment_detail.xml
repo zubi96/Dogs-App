@@ -4,10 +4,10 @@
     <data>
         <variable
             name="dog"
-            type="com.ivanzubak.dogsapp.model.DogBreed" />
+            type="com.ivanzubak.dogsapp.data.DogBreed" />
         <variable
             name="pallete"
-            type="com.ivanzubak.dogsapp.model.DogPallete" />
+            type="com.ivanzubak.dogsapp.data.DogPallete" />
 
     </data>
 
@@ -17,7 +17,7 @@
         android:paddingLeft="20dp"
         android:paddingRight="20dp"
         android:background="@{pallete.color}"
-        tools:context=".view.ListFragment">
+        tools:context=".ui.list.ListFragment">
 
         <ImageView
             android:id="@+id/dogImage"

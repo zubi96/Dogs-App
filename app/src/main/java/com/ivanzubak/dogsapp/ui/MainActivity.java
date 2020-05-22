@@ -1,4 +1,4 @@
-package com.ivanzubak.dogsapp.view;
+package com.ivanzubak.dogsapp.ui;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -12,17 +12,15 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
 
 import android.Manifest;
-import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 
 import com.ivanzubak.dogsapp.R;
+import com.ivanzubak.dogsapp.ui.detail.DetailFragment;
 
 public class MainActivity extends AppCompatActivity {
-
     private static final int PERMISSION_SEND_SMS = 1000;
     private NavController navController;
-
     private Fragment fragment;
 
     @Override

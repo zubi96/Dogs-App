@@ -1,4 +1,4 @@
-package com.ivanzubak.dogsapp.view;
+package com.ivanzubak.dogsapp.ui.list;
 
 import android.view.View;
 

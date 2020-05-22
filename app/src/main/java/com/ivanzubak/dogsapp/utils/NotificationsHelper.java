@@ -1,4 +1,4 @@
-package com.ivanzubak.dogsapp.util;
+package com.ivanzubak.dogsapp.utils;
 
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -14,8 +14,7 @@ import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
 import com.ivanzubak.dogsapp.R;
-import com.ivanzubak.dogsapp.view.ListFragment;
-import com.ivanzubak.dogsapp.view.MainActivity;
+import com.ivanzubak.dogsapp.ui.MainActivity;
 
 public class NotificationsHelper {
     private static final String CHANNEL_ID = "Dogs channel id";

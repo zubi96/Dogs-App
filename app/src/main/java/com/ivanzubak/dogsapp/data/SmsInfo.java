@@ -1,4 +1,4 @@
-package com.ivanzubak.dogsapp.model;
+package com.ivanzubak.dogsapp.data;
 
 public class SmsInfo {
     public String to;

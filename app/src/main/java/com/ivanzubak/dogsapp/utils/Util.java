@@ -1,4 +1,4 @@
-package com.ivanzubak.dogsapp.util;
+package com.ivanzubak.dogsapp.utils;
 
 import android.content.Context;
 import android.widget.ImageView;

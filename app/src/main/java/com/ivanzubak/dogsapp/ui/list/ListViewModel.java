@@ -1,20 +1,19 @@
-package com.ivanzubak.dogsapp.viewmodel;
+package com.ivanzubak.dogsapp.ui.list;
 
 import android.app.Application;
 import android.os.AsyncTask;
-import android.util.Log;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
-import com.ivanzubak.dogsapp.model.DogBreed;
-import com.ivanzubak.dogsapp.model.DogDao;
-import com.ivanzubak.dogsapp.model.DogDatabase;
-import com.ivanzubak.dogsapp.model.DogsApiService;
-import com.ivanzubak.dogsapp.util.NotificationsHelper;
-import com.ivanzubak.dogsapp.util.SharedPreferencesHelper;
+import com.ivanzubak.dogsapp.data.DogBreed;
+import com.ivanzubak.dogsapp.data.db.DogDao;
+import com.ivanzubak.dogsapp.data.db.DogDatabase;
+import com.ivanzubak.dogsapp.data.remote.dogs.DogsApiService;
+import com.ivanzubak.dogsapp.utils.NotificationsHelper;
+import com.ivanzubak.dogsapp.utils.SharedPreferencesHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,9 +24,9 @@ import io.reactivex.observers.DisposableSingleObserver;
 import io.reactivex.schedulers.Schedulers;
 
 public class ListViewModel extends AndroidViewModel {
-    public MutableLiveData<List<DogBreed>> dogs = new MutableLiveData<List<DogBreed>>();
-    public MutableLiveData<Boolean> dogLoadError = new MutableLiveData<Boolean>();
-    public MutableLiveData<Boolean> loading = new MutableLiveData<Boolean>();
+    private MutableLiveData<List<DogBreed>> dogs = new MutableLiveData<List<DogBreed>>();
+    private MutableLiveData<Boolean> dogLoadError = new MutableLiveData<Boolean>();
+    private MutableLiveData<Boolean> loading = new MutableLiveData<Boolean>();
 
     private DogsApiService dogsService = new DogsApiService();
     private CompositeDisposable disposable = new CompositeDisposable();
@@ -42,8 +41,19 @@ public class ListViewModel extends AndroidViewModel {
         super(application);
     }
 
-    public void refresh() {
+    public LiveData<List<DogBreed>> getDogs() {
+        return dogs;
+    }
 
+    public LiveData<Boolean> getDogLoadError() {
+        return dogLoadError;
+    }
+
+    public LiveData<Boolean> getLoading() {
+        return loading;
+    }
+
+    public void refresh() {
             checkCacheDuration();
 
             long updateTime = prefHelper.getUpdateTime();
@@ -54,7 +64,6 @@ public class ListViewModel extends AndroidViewModel {
             } else {
                 fetchFromRemote();
             }
-
     }
 
     public void refreshBypassCache() {
@@ -83,7 +92,6 @@ public class ListViewModel extends AndroidViewModel {
                             public void onSuccess(List<DogBreed> dogBreeds) {
                                 insertTask = new InsertDogsTask();
                                 insertTask.execute(dogBreeds);
-                                Toast.makeText(getApplication(), "Dogs retrieved from endpoint", Toast.LENGTH_SHORT).show();
                                 NotificationsHelper.getInstance(getApplication()).createNotification();
                             }
 
@@ -155,7 +163,8 @@ public class ListViewModel extends AndroidViewModel {
         @Override
         protected void onPostExecute(List<DogBreed> dogBreeds) {
             dogsRetrieved(dogBreeds);
-            Toast.makeText(getApplication(), "Dogs retrieved from database", Toast.LENGTH_SHORT).show();
         }
     }
+
+
 }
